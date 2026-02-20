@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 from src.api_client import send_to_grobid
 from pathlib import Path
+from src.run_cloud import run_cloud 
 
 script_dir = Path(__file__).resolve().parent
 env_path = script_dir.parent / '.env'
@@ -13,11 +14,14 @@ raw_output = os.getenv("OUTPUT_DIR", "./data/output")
 
 INPUT_DIR = (script_dir / raw_input).resolve()
 OUTPUT_DIR = (script_dir / raw_output).resolve()
+CANTIDAD_PALABRAS = int(os.getenv("CANTIDAD_PALABRAS", 2))
+
 
 def main():
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
-
+    if not os.path.exists(f"{OUTPUT_DIR}/images"):
+        os.makedirs(f"{OUTPUT_DIR}/images")
     files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.pdf')]
     
     if not files:
@@ -42,6 +46,7 @@ def main():
             print(f"Salvado el XML en: {save_path}")
         else:
             print(f"Fallo al generar el XML de: {filename}")
+    run_cloud(OUTPUT_DIR, f"{OUTPUT_DIR}/images", CANTIDAD_PALABRAS) 
 
 if __name__ == "__main__":
     main()
