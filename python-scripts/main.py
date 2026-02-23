@@ -3,6 +3,8 @@ from dotenv import load_dotenv
 from src.api_client import send_to_grobid
 from pathlib import Path
 from src.run_cloud import run_cloud 
+from src.contador_figures import count_figures 
+from src.visualizer import generate_figure_plot
 
 script_dir = Path(__file__).resolve().parent
 env_path = script_dir.parent / '.env'
@@ -47,6 +49,16 @@ def main():
         else:
             print(f"Fallo al generar el XML de: {filename}")
     run_cloud(OUTPUT_DIR, f"{OUTPUT_DIR}/images", CANTIDAD_PALABRAS) 
+    # Contar las figuras: Usamos un diccionario que contine la relación entre el nombre del fichero y la cantidad de imágenes
+    diccionario_contador_figuras = {}
+    files_xml = [f for f in os.listdir(OUTPUT_DIR) if f.endswith('.xml')]
+    if not files_xml:
+        print("Se ha producido un error, no hay ficheros xml de los que extraer información.")
+        return
+    for filename in files_xml:
+        # Filename contiene el nombre luego será la clave del diccionario.
+        diccionario_contador_figuras[filename] = count_figures(os.path.join(OUTPUT_DIR, filename))
+    generate_figure_plot(diccionario_contador_figuras,  f"{OUTPUT_DIR}/images")
 
 if __name__ == "__main__":
     main()
