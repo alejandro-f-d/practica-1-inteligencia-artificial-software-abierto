@@ -5,6 +5,8 @@ from pathlib import Path
 from src.run_cloud import run_cloud 
 from src.contador_figures import count_figures 
 from src.visualizer import generate_figure_plot
+from src.extract_links import extract_links 
+from src.generate_document import generate_links_report 
 
 script_dir = Path(__file__).resolve().parent
 env_path = script_dir.parent / '.env'
@@ -24,6 +26,9 @@ def main():
         os.makedirs(OUTPUT_DIR)
     if not os.path.exists(f"{OUTPUT_DIR}/images"):
         os.makedirs(f"{OUTPUT_DIR}/images")
+    if not os.path.exists(f"{OUTPUT_DIR}/reporte_links"):
+        os.makedirs(f"{OUTPUT_DIR}/reporte_links")
+
     files = [f for f in os.listdir(INPUT_DIR) if f.endswith('.pdf')]
     
     if not files:
@@ -59,6 +64,11 @@ def main():
         # Filename contiene el nombre luego será la clave del diccionario.
         diccionario_contador_figuras[filename] = count_figures(os.path.join(OUTPUT_DIR, filename))
     generate_figure_plot(diccionario_contador_figuras,  f"{OUTPUT_DIR}/images")
+    diccionario_links = {}
+    for filename in files_xml:
+        # Filename contiene el nombre luego será la clave del diccionario.
+        diccionario_links[filename] = extract_links(os.path.join(OUTPUT_DIR, filename)) 
+    generate_links_report(diccionario_links, f"{OUTPUT_DIR}/reporte_links/links_documentos.md")
 
 if __name__ == "__main__":
     main()

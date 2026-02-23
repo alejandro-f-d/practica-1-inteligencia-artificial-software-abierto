@@ -32,5 +32,5 @@ def generate_figure_plot(data_dict, path_save):
 
     plt.tight_layout()
     plt.savefig(f"{path_save}/count_figures")
-    plt.show()
+    # plt.show()
 
