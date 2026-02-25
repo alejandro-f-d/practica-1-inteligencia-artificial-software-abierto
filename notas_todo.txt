@@ -1,0 +1,5 @@
+- Hacer un docker-compose.yml para la estructura de grobid y de python con los directorios compartidos del directorio de los papers.
+- Levatar el mapeo en otro puerto diferente dependendiendo de un fichero .environment. 
+- Hacer uso de conda y poetry para portabilidad.
+- Hacer un read the docs.
+- Usar la herramienta de github que vana  usar como "corrector en la práctica"
