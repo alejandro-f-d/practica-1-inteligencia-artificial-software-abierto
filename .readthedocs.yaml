@@ -10,7 +10,7 @@ mkdocs:
 
 python:
   install:
-    - requirements: requirements.txt
+    - requirements: requirements.txt  
     - method: pip
       packages:
-        - mkdocs-material  
+        - mkdocs-material          
