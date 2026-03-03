@@ -8,4 +8,5 @@ Esta práctica consta en el desarrollo de un software que junto a la herramienta
 Para el desarrollo de este software se han utilizado herramientas desarrolladas por terceros: 
 
 GROBID contributors. (2008--2026). GROBID. https://github.com/kermitt2/grobid
+
 Garijo, D., & Montero, A. RSFC: Research Software Fairness Checks (Version 0.1.2) [Computer software]. https://github.com/oeg-upm/rsfc
