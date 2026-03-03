@@ -1,10 +1,9 @@
 site_name: IA Software Abierto - Práctica 1
 site_description: Documentación de la práctica 1 de Inteligencia Artificial y Software Abierto
-site_author: Alejandro F. D. 
+site_author: Alejandro F. D.
 
 theme:
-  name: material  
+  name: material
 
 nav:
   - Inicio: index.md
-  - Instalación: index.md 
