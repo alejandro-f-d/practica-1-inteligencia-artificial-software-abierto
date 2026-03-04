@@ -8,36 +8,36 @@ Sigue estos pasos para configurar el entorno de desarrollo.
 
 ## Paso a paso
 0. Ejecución de grobid de manera previa:
-  ``` 
-  docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.2-full
-  ```
+```bash  
+docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8.2-full
+```
 1. Clona el repositorio:
-   ```
-   git clone [git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git](git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git)
-   cd practica-1-inteligencia-artificial-software-abierto
-   ```
+```bash
+git clone [git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git](git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git)
+cd practica-1-inteligencia-artificial-software-abierto
+```
 2. Creación de un entorno virtual (Recomendado)
-    ```
-    python -m venv venv
-    source venv/bin/activate  # En Windows: venv\Scripts\activate
-    pip install -r requirements.txt
-    ```
+```bash
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
 3. Configuración de las variables de entorno: (En la ruta: ./python-scripts/.env)
-  ```
-  INPUT_DIR=data/input
-  OUTPUT_DIR=data/output
-  CANTIDAD_PALABRAS=10
-  GROBID_API_URL=http://localhost:8070/api/processFulltextDocument
-  ```
+```env
+INPUT_DIR=data/input
+OUTPUT_DIR=data/output
+CANTIDAD_PALABRAS=10
+GROBID_API_URL=http://localhost:8070/api/processFulltextDocument
+```
   Significado de las variables de entorno:
     INPUT_DIR: Directorio de entrada con los pdfs.
     OUTPUT_DIR: Directorio de salida con los resultados de los pdf. Este tiene presente los diferentes XML de los pdf. Las imagenes con lás gráficas que se han generado y un reporte en formato markdown con los enlaces de cada documento.
     CANTIDAD_PALABRAS: Cantidad de palabras a mostrar en la nube de palabras del abstract. Esta nube filtra las palabras/conectores más cómunes para evitar que salgan en el gráfico.
     GROBID_API_URL: Dirección URL del servicio de grobid al que se le van a realizar las peticiones. 
 4. Ejecución de los scripts de python:
-  ```
-  python python-scripts/main.py
-  ```
+```bash
+python python-scripts/main.py
+```
 Con esto, en la carpeta especificada de output tendremos los resultados.
 
 
@@ -50,18 +50,18 @@ Para la instalación del programa en este método se debe disponer de las siguie
 ## Paso a paso:
 Pasos a seguir para la ejecución: 
 1. Clonar el repositorio:
-```
+```bash
 git clone [git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git](git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git)
 cd practica-1-inteligencia-artificial-software-abierto/docker/python_docker
 ```
 2. Creación de la carpeta de input para el programa:
-```
+```bash
   mkdir input/
 ```
 En esta carpeta deberás copiar o mover los papers a analizar.
 
 3. Creación de las variables de entorno para la ejecución. En un fichero con nombre .env debes configurar:
-```
+```env
 GROBID_EXTERNAL_PORT=8070
 CANTIDAD_PALABRAS=30
 ```
@@ -77,7 +77,7 @@ Para la limpieza del programa e imágenes docker puedes ejecutar: `docker compos
 
 #### Error con healt_check:
 En caso de tener el siguiente error:
-```
+```bash
   Container grobid_ia_1 Error dependency grobid failed to start
   dependency failed to start: container grobid_ia_1 is unhealthy
 ```
