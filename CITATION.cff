@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Si utilizas este software, por favor cítalo de la siguiente manera."
+authors:
+  - family-names: "F. D."
+    given-names: "Alejandro"
+title: "Práctica 1 IA - Software Abierto"
+version: 1.0.0
+date-published: 2026-03-04
+url: "https://github.com/alejandro-f-d/practica-1-inteligencia-artificial-software-abierto"
