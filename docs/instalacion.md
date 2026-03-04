@@ -51,7 +51,7 @@ Para la instalación del programa en este método se debe disponer de las siguie
 Pasos a seguir para la ejecución: 
 1. Clonar el repositorio:
 ```bash
-git clone [git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git](git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git)
+git clone git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git
 cd practica-1-inteligencia-artificial-software-abierto/docker/python_docker
 ```
 2. Creación de la carpeta de input para el programa:
