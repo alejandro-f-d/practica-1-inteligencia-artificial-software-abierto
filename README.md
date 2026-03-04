@@ -2,7 +2,7 @@
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Documentation Status](https://app.readthedocs.org/projects/practica-1-inteligencia-artificial-software-abierto/badge/?version=latest)](https://practica-1-inteligencia-artificial-software-abierto.readthedocs.io/es/latest/?badge=latest)
-[![DOI](https://zenodo.org/badge/1156519336.svg)](https://doi.org/10.5281/zenodo.18684077)
+[![DOI](https://zenodo.org/badge/1156519336.svg)](https://doi.org/10.5281/zenodo.18868445)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Herramienta para el procesamiento de documentos científicos (PDF) mediante el uso de **GROBID**. El sistema extrae texto completo, procesa figuras y genera visualizaciones analíticas como nubes de palabras.
