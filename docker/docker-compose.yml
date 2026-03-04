@@ -1,0 +1,38 @@
+name: primera-practica-ia-software-abierto
+services:
+  grobid:
+    container_name: grobid_ia_1
+    image: grobid/grobid:0.8.2-full
+    restart: always
+    ports:
+      - "${GROBID_EXTERNAL_PORT}:8070"
+    networks:
+      - net_ia_practica_1
+    init: true
+    ulimits:
+      core: 0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  python-service: 
+    container_name: python_ia_1
+    build: ./python_docker/
+    depends_on:
+      grobid:
+        condition: service_started 
+    environment:
+      GROBID_URL: "http://grobid:8070/api/processFulltextDocument"
+      CANTIDAD_PALABRAS: ${CANTIDAD_PALABRAS}
+    volumes:
+      - ./python_docker/input:/input
+      - ./python_docker/output:/output
+    networks:
+      - net_ia_practica_1
+networks:
+  net_ia_practica_1:
+    driver: bridge
