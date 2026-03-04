@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Si utilizas este software, por favor cítalo de la siguiente manera."
 authors:
-  - family-names: "F. D."
+  - family-names: "Fisac Delgado"
     given-names: "Alejandro"
 title: "Práctica 1 IA - Software Abierto"
 version: 1.0.0
