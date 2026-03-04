@@ -8,6 +8,13 @@ services:
       - "${GROBID_EXTERNAL_PORT}:8070"
     networks:
       - net_ia_practica_1
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8070/api/isalive"]
+      interval: 10s    
+      timeout: 5s     
+      retries: 10      
+      start_period: 30s
     init: true
     ulimits:
       core: 0
@@ -24,7 +31,7 @@ services:
     build: ./python_docker/
     depends_on:
       grobid:
-        condition: service_started 
+        condition: service_healthy 
     environment:
       GROBID_URL: "http://grobid:8070/api/processFulltextDocument"
       CANTIDAD_PALABRAS: ${CANTIDAD_PALABRAS}
