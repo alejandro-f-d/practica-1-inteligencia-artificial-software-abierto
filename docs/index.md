@@ -14,6 +14,6 @@ Garijo, D., & Montero, A. RSFC: Research Software Fairness Checks (Version 0.1.2
 
 ## Validación:
 
-La fiabilidad de la herramienta ha sido contrastada mediante un proceso de validación sistemática sobre un **corpus de control compuesto por 10 datasets** relacionados en una misma disciplina. Se han validado cada uno de los resultados.
+La fiabilidad de la herramienta ha sido contrastada mediante un proceso de validación sistemática sobre un **corpus de control compuesto por 10 datasets** relacionados en una misma disciplina. Se han validado cada uno de los resultados para sus tareas. Nube de palabras, gráfico con número de figuras en cada uno de los papers y generación de reporte de enlaces en cada uno de los papers.
 
 
