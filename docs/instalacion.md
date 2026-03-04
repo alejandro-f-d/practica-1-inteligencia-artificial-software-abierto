@@ -13,7 +13,7 @@ docker run --rm --gpus all --init --ulimit core=0 -p 8070:8070 grobid/grobid:0.8
 ```
 1. Clona el repositorio:
 ```bash
-git clone [git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git](git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git)
+git clone git@github.com:alejandro-f-d/practica-1-inteligencia-artificial-software-abierto.git
 cd practica-1-inteligencia-artificial-software-abierto
 ```
 2. Creación de un entorno virtual (Recomendado)
@@ -82,6 +82,7 @@ En caso de tener el siguiente error:
   dependency failed to start: container grobid_ia_1 is unhealthy
 ```
 Debe modificar en el docker-compose.yml en `practica-1-inteligencia-artificial-software-abierto/docker` el start_period por un valor mayor en tiempo para permitir a grobid inicializarse de manera correcta. 
+
 
 
 

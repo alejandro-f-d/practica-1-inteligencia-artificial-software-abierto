@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "practica_1_ia"
-version = "2.0.0"
+version = "2.0.1"
 description = "Herramienta de procesamiento de PDFs científicos usando GROBID y análisis de texto"
 readme = "README.md"
 license = {text = "Apache-2.0"}

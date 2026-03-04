@@ -10,3 +10,10 @@ Para el desarrollo de este software se han utilizado herramientas desarrolladas 
 GROBID contributors. (2008--2026). GROBID. https://github.com/kermitt2/grobid
 
 Garijo, D., & Montero, A. RSFC: Research Software Fairness Checks (Version 0.1.2) [Computer software]. https://github.com/oeg-upm/rsfc
+
+
+## Validación:
+
+La fiabilidad de la herramienta ha sido contrastada mediante un proceso de validación sistemática sobre un **corpus de control compuesto por 10 datasets** relacionados en una misma disciplina. Se han validado cada uno de los resultados.
+
+
